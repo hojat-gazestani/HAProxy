@@ -2,9 +2,9 @@ import requests
 import threading
 
 def send_requests():
-    url = 'http://192.16.56.22:8010'
+    url = 'http://192.168.56.21:81'
 
-    for _ in range(2):
+    for _ in range(1000):
         threading.Thread(target=send_request, args=(url,)).start()
 
 def send_request(url):
