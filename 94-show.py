@@ -4,6 +4,7 @@ from haproxyadmin import haproxy
 
 hap = haproxy.HAProxy(socket_file='/run/haproxy/admin.sock')
 
+
 frontends = hap.frontends()
 backends = hap.backends()
 
