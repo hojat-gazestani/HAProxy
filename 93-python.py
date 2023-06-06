@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
-# pip install haproxyadmin
 from haproxyadmin import haproxy
 
-hap = haproxy.HAProxy(socket_dir='/run/haproxy/admin.sock')
+#hap = haproxy.HAProxy(socket='127.0.0.1:9999')
+hap = haproxy.HAProxy(socket_file='/run/haproxy/admin.sock')
 
 frontends = hap.frontends()
 
 for frontend in frontends:
-    print(frontend.name, frontend.requests. frontend.proccess_nb)
+    print(frontend.name, frontend.requests, frontend.process_nb)
+
