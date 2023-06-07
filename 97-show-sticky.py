@@ -1,7 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
 
-stats_url = "http://localhost:9999/stats"  # Replace with your HAProxy stats URL
+from haproxyadmin import haproxy
+
+hap = haproxy.HAProxy(socket_file='/run/haproxy/admin.sock')
+
+backends = hap.backends()
+
+# stats_url = "http://localhost:9999/stats"  # Replace with your HAProxy stats URL
 backend_name = "myapps"  # Replace with your backend name
 
 response = requests.get(stats_url)
